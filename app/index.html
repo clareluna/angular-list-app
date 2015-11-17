@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<head>
+	<title>Clare's MedBridge Challenge</title>
+</head>
+<body>
+	<header>
+		<p>
+			MedBridge Coding Challenge
+		</p>
+	</header>	
+	<form name="dropDownController"> <!-- this is prototype -->
+		<select name="List1" id="List1" ng-options="option.name for option in data.availableOptions track by option.id"
+      ng-model="data.selectedOption"></select>
+		
+	</form>	
+</body>
