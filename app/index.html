@@ -8,9 +8,21 @@
 			MedBridge Coding Challenge
 		</p>
 	</header>	
-	<form name="dropDownController"> <!-- this is prototype -->
-		<select name="List1" id="List1" ng-options="option.name for option in data.availableOptions track by option.id"
-      ng-model="data.selectedOption"></select>
-		
+	<form name="DropDownController"> <!--my code-->
+		<div class="dropdown-container" ng-class="{ show: listVisible }">
+			<div class="dropdown-display" ng-click="show();" ng-class="{ clicked: listVisible }">
+				<span ng-if="!isPlaceholder">{{display}}</span>
+				<span class="placeholder" ng-if="isPlaceholder">{{placeholder}}lt;/span>
+				<i class="fa fa-angle-down"></i> <!--changes mouse-->
+			</div>
+			<div class="dropdown-list">
+				<div>
+					<div ng-repeat="item in list" ng-click="select(item)" ng-class="{ selected: isSelected(item) }">
+						<span>{{property !== undefined ? item[property] : item}}</span>
+						<i class="fa fa-check"></i> <!--changes mouse-->
+					</div>
+				</div>
+			</div>
+		</div>
 	</form>	
 </body>
